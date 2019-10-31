@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- <style> div{background: gray;
+                display: flex;
+                justify-content: center;
+                height: 300px;
+                align-items: center }
+            div>button{
+                background-color: red;
+                height: 70%;
+                width: 100px;
+               margin: 70px;
+                text-align: center;
+                line-height: 50px;
+                font-size: 30px;
+                }
+</style> -->
+</head>
+<body>
+    <!-- <div >
+            <button onclick="alert('butten 1')">butten 1</button>
+            <button onclick="alert('butten 2')">butten 2</button>
+            <button onclick="alert('butten 3')">butten 3</button>
+    </div> -->
+    
+    <script>
+    const template = document.createElement('template');
+        template.innerHTML =
+        `<style> div{background: gray;
+                display: flex;
+                justify-content: center;
+                height: 300px;
+                align-items: center }
+            div>button{
+                background-color: red;
+                height: 70%;
+                width: 100px;
+               margin: 70px;
+                text-align: center;
+                line-height: 50px;
+                font-size: 30px;
+                }
+               </style>
+               <div >
+            <button onclick="alert('butten 1')">butten 1</button>
+            <button onclick="alert('butten 2')">butten 2</button>
+            <button onclick="alert('butten 3')">butten 3</button>
+              </div>
+            `;
+            class newdiv extends HTMLElement{
+                constructor(){
+                    super()
+                    this._shadowRoot=this.attachShadow({mode:'open'})
+                    this._shadowRoot.appendChild(template.content.cloneNode(true))
+                }
+            }
+            window.customElements.define('n-div',newdiv)
+            </script>
+
+            <n-div></n-div>
+            <n-div></n-div>
+            <n-div></n-div>
+            <n-div></n-div>
+            <n-div></n-div>
+            <n-div></n-div>
+
+
+
+            
+</body>
+</body>
+</html>
